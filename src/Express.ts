@@ -35,7 +35,7 @@ const InitExpress = (app: Express): Server => {
       }
     const product = await subscribeProductEvent({
       type: "GET",
-      data: 1,
+      data: req.query.id ? +req.query.id : 1,
     });
     res.send({ product, sum });
   });
